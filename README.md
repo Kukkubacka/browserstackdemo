@@ -1,2 +1,2 @@
-![BrowserStack](https://raw.githubusercontent.com/Kukkubacka/browserstackdemo/master/pics/Browserstack-logo.svg)
+![BrowserStack](/pics/Browserstack-logo.svg?raw=true "BrowserStack")
 # browserstackdemo
