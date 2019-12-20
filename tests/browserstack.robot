@@ -28,6 +28,7 @@ Test Pi3
     [Tags]          BS
     Log             BrowserStack Test - Pi3.
     Open Remote Browser     BROWSER=Chrome  BROWSER_VERSION=47.0  OS=Windows  OS_VERSION=7  
+    Sleep           3
     Wait Until Page Contains Element        //*[@class="entry-title"]
     Close All Browsers
 
