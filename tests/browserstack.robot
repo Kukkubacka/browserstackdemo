@@ -31,6 +31,7 @@ Test Pi3
     Sleep           3
     Wait Until Page Contains Element        //*[@class="entry-title"]
     Close All Browsers
+    Sleep           3
 
 
 *** Keywords ***
