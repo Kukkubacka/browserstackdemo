@@ -29,6 +29,7 @@ Test Pi3
     Log             BrowserStack Test - Pi3.
     Open Remote Browser     BROWSER=Chrome  BROWSER_VERSION=47.0  OS=Windows  OS_VERSION=7  
     Wait Until Page Contains Element        //*[@name='orderer']//li
+    Close All Browsers
 
 
 *** Keywords ***
