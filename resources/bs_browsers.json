@@ -1,0 +1,32 @@
+{
+    "BrowerStack": {
+        "Chrome": [
+            {
+                "browser": "chrome", 
+                "browser_version": "47.0", 
+                "os": "Windows", 
+                "os_version": "10",
+                "count": 0
+            }
+        ], 
+        "Firefox": [
+            {
+                "browser": "firefox", 
+                "browser_version": "71.0", 
+                "os": "Windows", 
+                "os_version": "10",
+                "count": 0
+            }
+        ], 
+        "Edge": [
+            {
+                "browser": "edge", 
+                "browser_version": "", 
+                "os": "", 
+                "os_version": "",
+                "count": 0
+            }
+        ]
+}
+
+
