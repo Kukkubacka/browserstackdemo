@@ -1,5 +1,6 @@
 *** Settings ***
 Library                     Selenium2Library
+Library                     Collections
 
 *** Variables ***
 
@@ -58,6 +59,20 @@ Test 2 Pi3
     Close Browser
     #Close All Browsers
     Sleep           1
+
+
+Test 2 Pi3 FF
+    [Tags]          BS
+    Log             BrowserStack Test - Pi3.
+    ${BROWSER}=     Set Variable  firefox
+    Set To Dictionary       ${capabilities}    browser              firefox
+    Set To Dictionary       ${capabilities}    browser_version      71.0
+    Open Remote Browser2    
+    Sleep           2
+    Wait Until Page Contains Element        //*[@class="entry-title"]
+    Close Browser
+    Sleep 1
+
 
 
 *** Keywords ***
