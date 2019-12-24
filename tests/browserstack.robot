@@ -71,7 +71,7 @@ Test 2 Pi3 FF
     Sleep           2
     Wait Until Page Contains Element        //*[@class="entry-title"]
     Close Browser
-    Sleep 1
+    Sleep           1
 
 
 
