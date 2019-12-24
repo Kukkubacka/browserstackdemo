@@ -13,18 +13,18 @@ ${RemoteUrl}                http://${BSUser}:${AccessKey}@hub.browserstack.com/w
 ${SiteUrl}                  http://jussi.pi3.dy.fi
 
 
-#${BROWSER}              chrome      # SelGrid: chrome / firefox
+${BROWSER}              chrome      # SelGrid: chrome / firefox
 #&{capabilities}         platformName=LINUX
 #...                     browserName=${BROWSER}
 #...                     version=${VER}
 
 &{capabilities}        browser=${BROWSER}
-...                    browser_version=${BROWSER_VERSION}
-...                    os=${OS}
-...                    os_version=${OS_VERSION}
+...                    browser_version=47.0
+...                    os=Windows
+...                    os_version=10
 ...                    build=Pi3 Suite
 ...                    projectName=Pi3
-...                    name=Pi3 Test
+...                    name=Pi3 Test 2
 
 
 # https://www.browserstack.com/list-of-browsers-and-platforms/live
