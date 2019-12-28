@@ -9,11 +9,11 @@ Library                     ../libs/pi3.py
 
 Resource                  ../resources/common_kw.robot
 
-# Test Setup                TestSetup
-# Test Teardown             TestTeardown
-
 Suite Setup                 SuiteSetup
 Suite Teardown              SuiteTeardown
+
+# Test Setup                TestSetup
+Test Teardown               TestTeardown
 
 
 *** Variables ***
