@@ -14,7 +14,8 @@ SuiteTeardown
     Log                 Write .JSON file to disk
     Write JSON File     ${json_file}    ${avail_browsers}
 
-
+TestTeardown
+    No Operation
 
 Create Capabilities
     [Documentation]     Read params from json and create capabilities dictionary.
