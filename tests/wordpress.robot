@@ -32,7 +32,7 @@ ${build}                    Pi3 Suite
 ${project}                  Pi3 Project
 
 ${json_file}                resources/bs_browsers.json
-
+${builds_file}              resources/builds.json
 
 
 ${BROWSER}                  chrome
