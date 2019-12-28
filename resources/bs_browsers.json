@@ -4,7 +4,7 @@
             {
                 "browser": "chrome",
                 "browser_version": "79.0",
-                "count": 4,
+                "count": 5,
                 "os": "Windows",
                 "os_version": "10",
                 "ref": 100,
@@ -14,7 +14,7 @@
             {
                 "browser": "chrome",
                 "browser_version": "46.0",
-                "count": 4,
+                "count": 5,
                 "os": "Windows",
                 "os_version": "7",
                 "ref": 101,
@@ -26,7 +26,7 @@
             {
                 "browser": "Edge",
                 "browser_version": "17",
-                "count": 4,
+                "count": 5,
                 "os": "Windows",
                 "os_version": "10",
                 "ref": 200,
@@ -38,7 +38,7 @@
             {
                 "browser": "firefox",
                 "browser_version": "71.0",
-                "count": 4,
+                "count": 5,
                 "os": "Windows",
                 "os_version": "10",
                 "ref": 300,
@@ -48,7 +48,7 @@
             {
                 "browser": "firefox",
                 "browser_version": "69.0",
-                "count": 4,
+                "count": 5,
                 "os": "Windows",
                 "os_version": "7",
                 "ref": 301,
@@ -58,7 +58,7 @@
             {
                 "browser": "firefox",
                 "browser_version": "69.0",
-                "count": 4,
+                "count": 5,
                 "os": "OS X",
                 "os_version": "Catalina",
                 "ref": 302,
@@ -70,7 +70,7 @@
             {
                 "browser": "IE",
                 "browser_version": "7",
-                "count": 4,
+                "count": 5,
                 "os": "Windows",
                 "os_version": "xp",
                 "ref": 400,
@@ -82,7 +82,7 @@
             {
                 "browser": "opera",
                 "browser_version": "12.16",
-                "count": 4,
+                "count": 5,
                 "os": "Windows",
                 "os_version": "8.1",
                 "ref": 500,
