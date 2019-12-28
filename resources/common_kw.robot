@@ -88,7 +88,7 @@ Build Name
     ${value}=           Evaluate    ${value} + 1
     Set To Dictionary       ${builds-obj}    NextIndex              ${value}
     Write JSON File     ${builds_file}    ${builds-obj}
-    Set To Dictionary   ${capabilities}   ${build}      ${tmp}       # ei paivity
+    Set To Dictionary   ${capabilities}   build      ${tmp}       # ei paivity
 
 Open Remote Browser
     #Open Browser    ${url}      chrome
