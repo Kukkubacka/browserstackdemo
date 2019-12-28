@@ -28,7 +28,7 @@ ${url}                      http://www.google.com
 # https://stackoverflow.com/questions/22719860/robot-framework-get-name-of-current-test-case
 # Built-In variables ${TEST NAME} and ${SUITE NAME}
 
-#${build}                   Pi3 Suite
+${build}                    Pi3 Suite
 ${project}                  Pi3 Project
 
 ${json_file}                resources/bs_browsers.json
@@ -42,7 +42,7 @@ ${BROWSER}                  chrome
 ...                         browser_version=47.0
 ...                         os=Windows
 ...                         os_version=10
-...                         build=${SUITE NAME}
+...                         build=${build}
 ...                         projectName=${project}
 ...                         name=TEST NAME
 
