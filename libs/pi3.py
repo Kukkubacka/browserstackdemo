@@ -61,6 +61,25 @@ class pi3:
 			#return curr, tdelta.microseconds
 			return curr, tdelta.total_seconds()
 
+		
+	def Random_True_False(self, max=10):
+		"""
+        Return False randomly....
+
+        Examples:
+        | ${tmp}= | Random_True_False | 
+        | ${tmp}= | Random_True_False | 25 |
+
+        """
+		if max <= 10:
+			max = 10
+		value = randint(0, max)
+		if value == 5:
+			return 'False'
+		else:
+			return 'True'		
+		
+		
 
 	def Read_JSON_File(self, json_file):
 		"""Read JSON file
