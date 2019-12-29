@@ -88,7 +88,10 @@ Api Marker
     
 Mark Random Test Failed
     [Documentation]     Mark random test Failed to test BrowserStack session status
-    No Operation
+    ${tmp}=             Random True False
+    Log                 ${tmp}
+    Run Keyword If      '${tmp}' == 'False'
+    ...                 Set To Dictionary   ${data}     status    ${tmp}    
 
 
 Create Capabilities
