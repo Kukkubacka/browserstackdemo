@@ -24,11 +24,6 @@ TestTeardown
 Request Build Id
     [Documentation]     Request build-id from BrowserStack
 
-    # tmp Test
-    ${BSUser}=          Set Variable        jussikivikoski1
-    ${AccessKey}=       Set Variable        m11Uz7zcY4Y77MmTyyzG
-    ${build}=           Set Variable        wp-10003
-
     ${api_url}=         Catenate    SEPARATOR=    ${api_base}     builds.json
     @{auth}=            Create List     ${BSUser}  ${AccessKey}
     Create Session      alias=bs_build    url=${api_url}     auth=${auth} 
