@@ -15,7 +15,86 @@ SuiteTeardown
     Write JSON File     ${json_file}    ${avail_browsers}
 
 TestTeardown
+    Run Keyword If Test Failed      Close Browser
+    Run Keyword If      '${build-id}' == 'Not Defined'
+    ...                 Request Build Id
+    Run Keyword If Test Passed          Api Marker      Passed
+    Run Keyword If Test Failed          Api Marker      Failed
+
+Request Build Id
+    [Documentation]     Request build-id from BrowserStack
+
+    # tmp Test
+    ${BSUser}=          Set Variable        jussikivikoski1
+    ${AccessKey}=       Set Variable        m11Uz7zcY4Y77MmTyyzG
+    ${build}=           Set Variable        wp-10003
+
+    ${api_url}=         Catenate    SEPARATOR=    ${api_base}     builds.json
+    @{auth}=            Create List     ${BSUser}  ${AccessKey}
+    Create Session      alias=bs_build    url=${api_url}     auth=${auth} 
+    ${resp}=            Get Request         bs_build     /
+    Log to console      ${resp}
+    Should Be Equal     ${resp.status_code}  ${200}
+    ${json} =           Set Variable  ${resp.json()}
+
+    ${name-id}=         Get Value From Json  ${json}  $..name,hashed_id
+
+    @{ref_list}         Convert To List     ${name-id}
+    ${len}=             Get Length      ${name-id}
+    :FOR   ${index}   IN RANGE    0    ${len}
+    \       Log     ${ref_list}[${index}]
+    \       Run Keyword If     '${ref_list}[${index}]' == '${build}'
+    \       ...     Set Suite Variable    ${build_ind}      ${index}
+    \       Exit For Loop If   '${ref_list}[${index}]' == '${build}'
+
+    # Fail jos ei loydy
+    ${build_ind}=       Evaluate        ${build_ind} + 1
+    Set Suite Variable    ${build-id}   ${ref_list}[${build_ind}]
+
+Api Marker
+    [Arguments]         ${status}
+    Log                 ${status}
+    Set To Dictionary   ${data}     status    ${status}
+
+    # build_id --> Sessions
+    ${api_url}=         Catenate    SEPARATOR=    ${api_base}   builds/     ${build-id}      /sessions.json
+    @{auth}=            Create List     ${BSUser}  ${AccessKey}
+    Create Session      alias=bs_build    url=${api_url}     auth=${auth} 
+    ${resp}=            Get Request         bs_build     /
+    Log to console      ${resp}
+    Should Be Equal     ${resp.status_code}  ${200}
+    ${json} =           Set Variable  ${resp.json()}
+    Log Many            ${json}
+    
+    # build_id  -->  sessionName  -->  session_id
+    ${name-id}=         Get Value From Json  ${json}  $..name,hashed_id
+    @{ref_list}         Convert To List     ${name-id}
+    ${len}=             Get Length      ${name-id}
+    :FOR   ${index}   IN RANGE    0    ${len}
+    \       Log     ${ref_list}[${index}]
+    \       Run Keyword If     '${ref_list}[${index}]' == '${TEST NAME}'
+    \       ...     Set Suite Variable    ${session_ind}      ${index}
+    \       Exit For Loop If   '${ref_list}[${index}]' == '${TEST NAME}'
+
+    # Fail jos ei loydy
+    ${session_ind}=       Evaluate        ${session_ind} + 1
+    Set Suite Variable    ${session-id}   ${ref_list}[${session_ind}]
+ 
+    ${rnd_fail}=        Mark Random Test Failed
+
+    # Set Session Status
+    ${api_url}=         Catenate    SEPARATOR=    ${api_base}   sessions/     ${session-id}      .json
+    @{auth}=            Create List     ${BSUser}  ${AccessKey}
+    Create Session      alias=bs_build    url=${api_url}     auth=${auth}     headers=${headers} 
+    ${resp}=            Put Request         bs_build            /     data=${data}  
+    Log to console      ${resp}
+    Should Be Equal     ${resp.status_code}  ${200}
+    
+    
+Mark Random Test Failed
+    [Documentation]     Mark random test Failed to test BrowserStack session status
     No Operation
+
 
 Create Capabilities
     [Documentation]     Read params from json and create capabilities dictionary.
