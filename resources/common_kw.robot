@@ -75,7 +75,7 @@ Api Marker
     ${session_ind}=       Evaluate        ${session_ind} + 1
     Set Suite Variable    ${session-id}   ${ref_list}[${session_ind}]
  
-    #${rnd_fail}=        Mark Random Test Failed
+    ${rnd_fail}=        Mark Random Test Failed
 
     # Set Session Status
     ${api_url}=         Catenate    SEPARATOR=    ${api_base}   sessions/     ${session-id}      .json
