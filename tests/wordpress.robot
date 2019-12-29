@@ -4,6 +4,7 @@ Library                     Collections
 Library                     JSONLibrary
 Library                     OperatingSystem
 #Library                    DebugLibrary
+Library                     RequestsLibrary
 
 Library                     ../libs/pi3.py
 
@@ -25,11 +26,12 @@ ${RemoteUrl}                http://${BSUser}:${AccessKey}@hub.browserstack.com/w
 
 ${url}                      http://www.google.com
 
-# https://stackoverflow.com/questions/22719860/robot-framework-get-name-of-current-test-case
 # Built-In variables ${TEST NAME} and ${SUITE NAME}
 
 ${build}                    Pi3 Suite
 ${project}                  Pi3 Project
+${build-id}                 Not Defined
+${session-id}
 
 ${json_file}                resources/bs_browsers.json
 ${builds_file}              resources/builds.json
@@ -45,6 +47,11 @@ ${BROWSER}                  chrome
 ...                         build=${build}
 ...                         projectName=${project}
 ...                         name=TEST NAME
+
+&{headers}              Content-Type=application/json
+
+&{data}                 status=PASSED
+...                     reason=Robot Framework
 
 
 # robot -d output -i BS tests/wordpress.robot
