@@ -48,8 +48,10 @@ ${BROWSER}                  chrome
 ...                         projectName=${project}
 ...                         name=TEST NAME
 
-&{headers}              Content-Type=application/json
+# REST API
 
+${api_base}             https://api.browserstack.com/automate/
+&{headers}              Content-Type=application/json
 &{data}                 status=PASSED
 ...                     reason=Robot Framework
 
