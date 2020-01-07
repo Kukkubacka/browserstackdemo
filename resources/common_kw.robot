@@ -39,7 +39,7 @@ Request Build Id
     :FOR   ${index}   IN RANGE    0    ${len}
     \       Log     ${ref_list}[${index}]
     \       Run Keyword If     '${ref_list}[${index}]' == '${build}'
-    \       ...     Set Suite Variable    ${build_ind}      ${index}
+            ...     Set Suite Variable    ${build_ind}      ${index}
     \       Exit For Loop If   '${ref_list}[${index}]' == '${build}'
 
     # Fail jos ei loydy
@@ -68,7 +68,7 @@ Api Marker
     :FOR   ${index}   IN RANGE    0    ${len}
     \       Log     ${ref_list}[${index}]
     \       Run Keyword If     '${ref_list}[${index}]' == '${TEST NAME}'
-    \       ...     Set Suite Variable    ${session_ind}      ${index}
+            ...     Set Suite Variable    ${session_ind}      ${index}
     \       Exit For Loop If   '${ref_list}[${index}]' == '${TEST NAME}'
 
     # Fail jos ei loydy
