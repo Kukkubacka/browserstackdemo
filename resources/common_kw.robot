@@ -75,7 +75,7 @@ Api Marker
     ${session_ind}=       Evaluate        ${session_ind} + 1
     Set Suite Variable    ${session-id}   ${ref_list}[${session_ind}]
  
-    #${rnd_fail}=        Mark Random Test Failed
+    ${rnd_fail}=        Mark Random Test Failed
 
     # Set Session Status
     ${api_url}=         Catenate    SEPARATOR=    ${api_base}   sessions/     ${session-id}      .json
@@ -88,10 +88,10 @@ Api Marker
     
 Mark Random Test Failed
     [Documentation]     Mark random test Failed to test BrowserStack session status
-    ${tmp}=             Random True False
+    ${tmp}=             Random True False      25
     Log                 ${tmp}
     Run Keyword If      '${tmp}' == 'False'
-    ...                 Set To Dictionary   ${data}     status    ${tmp}    
+    ...                 Set To Dictionary   ${data}     status    Failed    
 
 
 Create Capabilities
