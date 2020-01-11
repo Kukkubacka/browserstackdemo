@@ -10,7 +10,7 @@ SuiteSetupDev
     [Documentation]     Read bs_browsers.json.
     ${json-obj}=        Read JSON File     ${json_file}
     Set Suite Variable  ${avail_browsers}   ${json-obj}
-    Build Name          Device
+    Build Name          Devices
 
 
 SuiteTeardown
