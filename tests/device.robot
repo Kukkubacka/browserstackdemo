@@ -41,14 +41,17 @@ ${BROWSER}                  chrome
 
 
 &{capabilities}             realMobile=true
-...                         device=Galaxy Tab S5e
+...                         device=Samsung Galaxy Tab S5e
 ...                         os_version=9.0
-...                         browserstack.appium_version=1.6.5
-...                         browser=${BROWSER}
-...                         browser_version=47.0
+...                         browserstack.local=false
 ...                         build=${build}
 ...                         projectName=${project}
 ...                         name=TEST NAME
+
+
+#...                         browserstack.appium_version=1.6.5
+#...                         browser=${BROWSER}
+#...                         browser_version=47.0
 
 # REST API
 
