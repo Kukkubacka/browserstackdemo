@@ -6,11 +6,9 @@ Library                     OperatingSystem
 #Library                    DebugLibrary
 Library                     RequestsLibrary
 
-#Library                     ../libs/pi3.py
-Library                     ../libs/pi3loc.py
+Library                     ../libs/pi3.py
 
-#Resource                  ../resources/common_kw.robot
-Resource                  ../resources/common_kw_loc.robot
+Resource                  ../resources/common_kw.robot
 
 Suite Setup                 SuiteSetupDev
 Suite Teardown              SuiteTeardown
@@ -42,10 +40,12 @@ ${builds_file}              resources/builds.json
 ${BROWSER}                  chrome
 
 
-&{capabilities}             browser=${BROWSER}
+&{capabilities}             realMobile=true
+...                         device=Galaxy Tab S5e
+...                         os_version=9.0
+...                         browserstack.appium_version=1.6.5
+...                         browser=${BROWSER}
 ...                         browser_version=47.0
-...                         os=Windows
-...                         os_version=10
 ...                         build=${build}
 ...                         projectName=${project}
 ...                         name=TEST NAME
@@ -65,7 +65,7 @@ ${Tag}
 
 *** Test Cases ***
 
-Test 1
+Device 1
     [Tags]              DEV      Android
     Log                 Running Test 1
     ${browser_ref}=     Get Next Browser Ref
