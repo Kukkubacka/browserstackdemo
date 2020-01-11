@@ -2,12 +2,16 @@
 
 SuiteSetup
     [Documentation]     Read bs_browsers.json.
-
-    Log                 Reading JSON from XX
-    Log                 ${json_file}
     ${json-obj}=        Read JSON File     ${json_file}
     Set Suite Variable  ${avail_browsers}   ${json-obj}
     Build Name          NextIndex
+
+SuiteSetupDev
+    [Documentation]     Read bs_browsers.json.
+    ${json-obj}=        Read JSON File     ${json_file}
+    Set Suite Variable  ${avail_browsers}   ${json-obj}
+    Build Name          Device
+
 
 SuiteTeardown
     [Documentation]     Write updated .json and push to git
