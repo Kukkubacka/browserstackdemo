@@ -68,7 +68,7 @@ ${Tag}
 Device 1
     [Tags]              DEV      Android
     Log                 Running Test 1
-    ${browser_ref}=     Get Next Browser Ref
+    #${browser_ref}=     Get Next Browser Ref
     Log                 ${browser_ref}
     Create Capabilities   ${browser_ref}    ${TEST NAME}
     Log Many            &{capabilities}
