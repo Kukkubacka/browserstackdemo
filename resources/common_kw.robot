@@ -4,13 +4,13 @@ SuiteSetup
     [Documentation]     Read bs_browsers.json.
     ${json-obj}=        Read JSON File     ${json_file}
     Set Suite Variable  ${avail_browsers}   ${json-obj}
-    Build Name          NextIndex
+    Build Name          NextIndex      wp-
 
 SuiteSetupDev
     [Documentation]     Read bs_browsers.json.
     ${json-obj}=        Read JSON File     ${json_file}
     Set Suite Variable  ${avail_browsers}   ${json-obj}
-    Build Name          Devices
+    Build Name          Devices      dev-
 
 
 SuiteTeardown
@@ -162,11 +162,11 @@ Get Next Browser Ref
 
 Build Name
     [Documentation]     Read index from builds.json
-    [Arguments]         ${bs_project}
+    [Arguments]         ${bs_project}   ${bs_prefix}
     ${builds-obj}=      Read JSON File     ${builds_file}
     ${value}=           Get From Dictionary     ${builds-obj}   ${bs_project}
     ${tmp}=             Convert To String   ${value}
-    ${tmp}=             Catenate    SEPARATOR=    wp-     ${tmp}
+    ${tmp}=             Catenate    SEPARATOR=    ${bs_prefix}     ${tmp}
     Set Suite Variable  ${build}   ${tmp}
     ${value}=           Evaluate    ${value} + 1
     Set To Dictionary       ${builds-obj}    ${bs_project}              ${value}
