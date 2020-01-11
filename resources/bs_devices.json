@@ -1,0 +1,32 @@
+{
+    "BrowserStack": {
+        "Android": [
+            {
+                "realMobile": "true",
+                "device": "",
+                "os_version": "",
+                "browserstack.appium_version": "",
+                "browser": "chrome",
+                "browser_version": "79.0",
+                "count": 14,
+                "ref": 100,
+                "valid": "True",
+                "weight": 1
+            }
+        ],
+        "Ios": [
+            {
+                "realMobile": "true",
+                "device": "",
+                "os_version": "",
+                "browserstack.appium_version": "",
+                "browser": "chrome",
+                "browser_version": "79.0",
+                "count": 14,
+                "ref": 200,
+                "valid": "True",
+                "weight": 1
+            }
+        ]
+    }
+}
