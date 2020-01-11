@@ -74,6 +74,7 @@ Device 1
     #${browser_ref}=     Get Next Browser Ref
     #Log                 ${browser_ref}
     #Create Capabilities   ${browser_ref}    ${TEST NAME}
+    Set To Dictionary       ${capabilities}     name    ${TEST NAME}
     Log Many            &{capabilities}
     Open Remote Browser   
     Sleep           2
