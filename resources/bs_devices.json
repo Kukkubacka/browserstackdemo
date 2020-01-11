@@ -3,9 +3,9 @@
         "Android": [
             {
                 "realMobile": "true",
-                "device": "",
-                "os_version": "",
-                "browserstack.appium_version": "",
+                "device": "Galaxy Tab S5e",
+                "os_version": "9.0",
+                "browserstack.appium_version": "1.6.5",
                 "browser": "chrome",
                 "browser_version": "79.0",
                 "count": 14,
@@ -17,9 +17,9 @@
         "Ios": [
             {
                 "realMobile": "true",
-                "device": "",
-                "os_version": "",
-                "browserstack.appium_version": "",
+                "device": "iPad Mini 2019 ",
+                "os_version": "12",
+                "browserstack.appium_version": "1.6.5",
                 "browser": "chrome",
                 "browser_version": "79.0",
                 "count": 14,
