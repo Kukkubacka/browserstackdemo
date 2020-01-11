@@ -7,7 +7,7 @@ SuiteSetup
     Log                 ${json_file}
     ${json-obj}=        Read JSON File     ${json_file}
     Set Suite Variable  ${avail_browsers}   ${json-obj}
-    Build Name
+    Build Name          NextIndex
 
 SuiteTeardown
     [Documentation]     Write updated .json and push to git
@@ -158,13 +158,14 @@ Get Next Browser Ref
 
 Build Name
     [Documentation]     Read index from builds.json
+    [Arguments]         ${bs_project}
     ${builds-obj}=      Read JSON File     ${builds_file}
-    ${value}=           Get From Dictionary     ${builds-obj}   NextIndex
+    ${value}=           Get From Dictionary     ${builds-obj}   ${bs_project}
     ${tmp}=             Convert To String   ${value}
     ${tmp}=             Catenate    SEPARATOR=    wp-     ${tmp}
     Set Suite Variable  ${build}   ${tmp}
     ${value}=           Evaluate    ${value} + 1
-    Set To Dictionary       ${builds-obj}    NextIndex              ${value}
+    Set To Dictionary       ${builds-obj}    ${bs_project}              ${value}
     Write JSON File     ${builds_file}    ${builds-obj}
     Set To Dictionary   ${capabilities}   build      ${tmp}       # ei paivity
 
