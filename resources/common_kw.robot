@@ -50,6 +50,11 @@ Request Build Id
     ${build_ind}=       Evaluate        ${build_ind} + 1
     Set Suite Variable    ${build-id}   ${ref_list}[${build_ind}]
 
+Create Auth List
+    [Tags]              Hide
+    ${tmp}=             Create List     ${BSUser}  ${AccessKey}
+    Return From Keyword     ${tmp}
+
 Api Marker
     [Arguments]         ${status}
     Log                 ${status}
@@ -57,7 +62,8 @@ Api Marker
 
     # build_id --> Sessions
     ${api_url}=         Catenate    SEPARATOR=    ${api_base}   builds/     ${build-id}      /sessions.json
-    @{auth}=            Create List     ${BSUser}  ${AccessKey}
+    #@{auth}=            Create List     ${BSUser}  ${AccessKey}
+    @{auth}=            Create Auth List
     Create Session      alias=bs_build    url=${api_url}     auth=${auth} 
     ${resp}=            Get Request         bs_build     /
     Log to console      ${resp}
