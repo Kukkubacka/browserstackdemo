@@ -56,6 +56,7 @@ Create Auth List
     Return From Keyword     ${tmp}
 
 Api Marker
+    [Tags]              Flat
     [Arguments]         ${status}
     Log                 ${status}
     Set To Dictionary   ${data}     status    ${status}
