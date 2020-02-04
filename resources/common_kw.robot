@@ -175,7 +175,7 @@ Build Name
 
 Open Remote Browser
     [Tags]              Hide
-    ${RemoteUrl}        http://${BSUser}:${AccessKey}@hub.browserstack.com/wd/hub
+    ${RemoteUrl}=       Catenate    SEPARATOR=  http://  ${BSUser}  :  ${AccessKey}  @hub.browserstack.com/wd/hub
     #Open Browser    ${url}      chrome
     Open Browser   url=${url}   browser=${BROWSER}   remote_url=${RemoteURL}   desired_capabilities=${capabilities}
 
