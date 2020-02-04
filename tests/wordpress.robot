@@ -22,7 +22,7 @@ Test Teardown               TestTeardown
 # BrowserStack Account
 ${BSUser}                   YOUR-USER
 ${AccessKey}                YOUR-ACCESS-KEY
-${RemoteUrl}                http://${BSUser}:${AccessKey}@hub.browserstack.com/wd/hub
+#${RemoteUrl}                http://${BSUser}:${AccessKey}@hub.browserstack.com/wd/hub
 
 ${url}                      http://www.google.com
 
