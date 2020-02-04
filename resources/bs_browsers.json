@@ -4,7 +4,7 @@
             {
                 "browser": "chrome",
                 "browser_version": "79.0",
-                "count": 18,
+                "count": 19,
                 "os": "Windows",
                 "os_version": "10",
                 "ref": 100,
@@ -14,7 +14,7 @@
             {
                 "browser": "chrome",
                 "browser_version": "46.0",
-                "count": 18,
+                "count": 19,
                 "os": "Windows",
                 "os_version": "7",
                 "ref": 101,
@@ -38,7 +38,7 @@
             {
                 "browser": "firefox",
                 "browser_version": "71.0",
-                "count": 17,
+                "count": 18,
                 "os": "Windows",
                 "os_version": "10",
                 "ref": 300,
@@ -48,7 +48,7 @@
             {
                 "browser": "firefox",
                 "browser_version": "69.0",
-                "count": 17,
+                "count": 18,
                 "os": "Windows",
                 "os_version": "7",
                 "ref": 301,
@@ -58,7 +58,7 @@
             {
                 "browser": "firefox",
                 "browser_version": "69.0",
-                "count": 17,
+                "count": 18,
                 "os": "OS X",
                 "os_version": "Catalina",
                 "ref": 302,
@@ -70,7 +70,7 @@
             {
                 "browser": "IE",
                 "browser_version": "7",
-                "count": 17,
+                "count": 18,
                 "os": "Windows",
                 "os_version": "xp",
                 "ref": 400,
@@ -82,7 +82,7 @@
             {
                 "browser": "opera",
                 "browser_version": "12.16",
-                "count": 17,
+                "count": 18,
                 "os": "Windows",
                 "os_version": "8.1",
                 "ref": 500,
@@ -104,7 +104,7 @@
             {
                 "browser": "safari",
                 "browser_version": "13",
-                "count": 17,
+                "count": 18,
                 "os": "OS X",
                 "os_version": "Catalina",
                 "ref": 600,
